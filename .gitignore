@@ -1,38 +1,120 @@
-# OS
-.DS_Store
-Thumbs.db
+# NVIDIA DCF Valuation — .gitignore
+# Based on GitHub official Python template with Excel/financial additions
 
-# Python
+# ── Python ──────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
-*.pyo
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
 env/
 venv/
-.venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Jupyter
+# ── Jupyter ──────────────────────────────────────────────────────────────────
 .ipynb_checkpoints
+*.ipynb
 
-# VS Code
+# ── Excel / Office ───────────────────────────────────────────────────────────
+# Lock files created when Excel file is open
+~$*.xlsx
+~$*.xls
+~$*.xlsm
+~$*.docx
+~$*.pptx
+
+# Backup files created by our fix scripts — do NOT commit
+*_BACKUP_*.xlsx
+*_backup_*.xlsx
+CVM_session*_backup_*.xlsx
+nvidia_model_U*.xlsx
+
+# The canonical model IS committed — only backups are excluded
+# models/Company_Valuation_Model.xlsx is tracked (see below)
+
+# ── IDE / Editor ─────────────────────────────────────────────────────────────
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vs/
+*.code-workspace
 
-# Excel
-~$*
-*.xlsb
-*.xlsm
-*.xls
-*.xlsx
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
-# Data
-datasets/raw/*
-datasets/processed/*
+# ── Testing ──────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
 
-# Mac
-*.DS_Store
+# ── Distribution / Packaging ─────────────────────────────────────────────────
+*.manifest
+*.spec
 
-# Logs
+# ── Logs & temp ──────────────────────────────────────────────────────────────
 *.log
-
-# Temporary
 *.tmp
-*.backup
+*.temp
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Secrets (never commit these) ─────────────────────────────────────────────
+.env
+.env.local
+*.pem
+*.key
+secrets.json
+config.local.*
+
+# ── What IS committed ────────────────────────────────────────────────────────
+# The following are explicitly tracked (do not add to gitignore):
+#
+#   models/Company_Valuation_Model.xlsx     ← canonical model
+#   datasets/raw/*.csv                      ← static source data (Oct 17, 2025)
+#   datasets/processed/*.csv               ← pipeline outputs
+#   datasets/processed/*.json              ← WACC/comps/summary JSONs
+#   comps/comps_data.csv                   ← peer table
+#   reports/Investment_Memo_NVIDIA.pdf     ← memo
+#   screenshots/*.png                      ← charts
+#
+# Note on Excel model size: if the model exceeds GitHub's 50MB soft limit,
+# consider Git LFS:
+#   git lfs track "*.xlsx"
+#   git add .gitattributes

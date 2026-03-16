@@ -1,0 +1,11 @@
+# NVIDIA DCF Valuation — Python dependencies
+# Install: pip install -r requirements.txt
+
+# Excel model reading (core dependency for all scripts)
+openpyxl>=3.1.0
+
+# Data manipulation (used in comps analysis and CSV processing)
+# pandas>=2.0.0  # optional — not required for current scripts
+
+# Optional: live market data pulls (not used in current static analysis)
+# yfinance>=0.2.0  # uncomment if adding live data refresh
