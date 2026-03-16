@@ -1,0 +1,47 @@
+{
+  "pipeline": "NVIDIA DCF Valuation \u2014 run_all.py",
+  "run_timestamp": "2026-03-15T21:37:38.753426",
+  "model_file": "Company_Valuation_Model.xlsx",
+  "steps_completed": [
+    "validate",
+    "wacc",
+    "comps",
+    "export",
+    "comps_csv"
+  ],
+  "warnings": [],
+  "errors": [],
+  "wacc_summary": {
+    "wacc_pct": "12.9142%",
+    "cross_check": "PASS",
+    "diff_basis_pts": 0.0
+  },
+  "comps_summary": {
+    "n_peers": 5,
+    "median_implied_ev_revenue": 68.05,
+    "median_implied_ev_ebitda": 91.54,
+    "median_implied_pe": 208.5,
+    "current_price": 183.22
+  },
+  "datasets_exported": {
+    "is_years": 6,
+    "bs_years": 5,
+    "cf_years": 4,
+    "cleaned_rows": 6
+  },
+  "comps_csv": {
+    "path": "/home/claude/nvidia-valuation-analysis/comps/comps_data.csv",
+    "rows": 6
+  },
+  "outputs": [
+    "datasets/processed/wacc_results.json",
+    "datasets/processed/comps_results.json",
+    "datasets/processed/cleaned_financials.csv",
+    "datasets/processed/pipeline_summary.json",
+    "datasets/raw/nvidia_historical_IS.csv",
+    "datasets/raw/nvidia_historical_BS.csv",
+    "datasets/raw/nvidia_historical_CF.csv",
+    "datasets/raw/nvidia_market_data.csv",
+    "comps/comps_data.csv"
+  ]
+}

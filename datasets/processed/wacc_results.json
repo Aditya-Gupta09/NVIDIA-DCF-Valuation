@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "step": "wacc",
+    "run_timestamp": "2026-03-15T21:37:38.747214",
+    "cross_check": "PASS",
+    "diff_basis_pts": 0.0
+  },
+  "inputs": {
+    "risk_free_rate": 0.0407,
+    "adjusted_beta": 1.7728261434565593,
+    "equity_risk_premium": 0.05,
+    "effective_tax_rate": 0.13264941803727417,
+    "weight_equity": 0.9981026633333804,
+    "weight_debt": 0.0018973366666195863,
+    "pretax_cost_of_debt": 0.028285274047985913,
+    "market_cap_equity_m": 4452000.0,
+    "total_debt_m": 8463.0
+  },
+  "outputs": {
+    "cost_of_equity": 0.12934131,
+    "after_tax_cost_of_debt": 0.02453325,
+    "wacc_recalculated": 0.12914245,
+    "wacc_from_model": 0.12914245
+  },
+  "display": {
+    "cost_of_equity_pct": "12.9341%",
+    "after_tax_cost_of_debt_pct": "2.4533%",
+    "wacc_recalculated_pct": "12.9142%",
+    "wacc_from_model_pct": "12.9142%"
+  }
+}
